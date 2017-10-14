@@ -1,0 +1,63 @@
+CREATE TABLE users (
+    user_id     SERIAL PRIMARY KEY,
+    name        VARCHAR(30) NOT NULL,
+    username    VARCHAR(30) NOT NULL,
+    password    VARCHAR(30) NOT NULL,
+    phone       VARCHAR(30) NOT NULL,
+    numhours    INTEGER NOT NULL,
+    numevents   INTEGER NOT NULL,
+    is_admin    VARCHAR(1) NOT NULL
+);
+insert into users (name, username, password, phone, numhours, numevents, is_admin) 
+values ("Michael Yang", "myang97@utexas.edu", "root1", "9863716884", 1035, 40, 'N');
+insert into users (name, username, password, phone, numhours, numevents, is_admin) 
+values ("George Weng", "uncreativename0@gmail.com", "root2", "8571740293", 2416, 85, 'N');
+insert into users (name, username, password, phone, numhours, numevents, is_admin) 
+values ("William Chia", "2899523@gmail.com", "root3", "1728332094", 81, 20, 'N');
+insert into users (name, username, password, phone, numhours, numevents, is_admin) 
+values ("Omar Jamil", "omarj2898@gmail.com", "root4", "1029573818", 25, 10, 'N');
+insert into users (name, username, password, phone, numhours, numevents, is_admin) 
+values ("Vignesh Chilecampali", "cvignesh@utexas.edu", "root5", "5859402839", 76, 17, 'N');
+insert into users (name, username, password, phone, numhours, numevents, is_admin) 
+values ("Catherine White", "kwhite@searchhomeless.org", "root6", "7132763063", 76, 17, 'Y');
+
+CREATE TABLE events (
+    event_id        SERIAL PRIMARY KEY,
+    start_time      DATETIME NOT NULL,
+    end_time        DATETIME NOT NULL,
+    location        varchar(30) NOT NULL,
+    numvolunteers   INTEGER NOT NULL,
+    description     VARCHAR(300) NOT NULL,
+    created_by      VARCHAR(30) NOT NULL
+);
+insert into events (start_time, end_time, location, numvolunteers, description, created_by) 
+values ("2017-05-20 06:00:00", "2017-05-20 09:00:00", "1111 Fannnin St", 10, "Create pack lunches at JP Morgan", "Catherine White");
+insert into events (start_time, end_time, location, numvolunteers, description, created_by) 
+values ("2016-07-04 20:00:00", "2016-07-04 23:00:00", "1715 Guadalupe St", 35, "Host 4th of July party at Houston park", "Catherine White");
+insert into events (start_time, end_time, location, numvolunteers, description, created_by) 
+values ("2017-10-11 05:30:00", "2017-10-11 10:30:00", "5207 Northgate Dr", 5, "Sort clothes at Clothing Closet", "Catherine White");
+
+CREATE TABLE r1 (
+    users_user_id     INTEGER NOT NULL,
+    events_event_id   INTEGER NOT NULL
+);
+insert into r1 (users_user_id, events_event_id) values (1, 1);
+insert into r1 (users_user_id, events_event_id) values (1, 2);
+insert into r1 (users_user_id, events_event_id) values (1, 3);
+insert into r1 (users_user_id, events_event_id) values (2, 1);
+insert into r1 (users_user_id, events_event_id) values (2, 2);
+insert into r1 (users_user_id, events_event_id) values (2, 3);
+insert into r1 (users_user_id, events_event_id) values (3, 3);
+insert into r1 (users_user_id, events_event_id) values (4, 3);
+insert into r1 (users_user_id, events_event_id) values (4, 2);
+insert into r1 (users_user_id, events_event_id) values (5, 1);
+insert into r1 (users_user_id, events_event_id) values (5, 2);
+
+select * from r1;
+select * from users;
+select * from events;
+
+select u.name as "STUDENT NAME",
+e.description as "DESCRIPTION"
+from r1 id join users u on id.users_user_id = u.user_id
+join events e on id.events_event_id = e.event_id;
