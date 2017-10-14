@@ -8,7 +8,7 @@ import java.util.Properties;
 
 public class Database {
 	
-	private final Connection sql;
+	public final Connection sql;
 	
 	public Database() {
 		Connection temp = null;
@@ -52,6 +52,8 @@ public class Database {
 			st.setString(1, user);
 			st.setString(2, pass);
 			ResultSet rs = st.executeQuery();
+			if (!rs.next())
+				return 0;
 			int user_id = rs.getInt("user_id");
 			return user_id;
 		} catch (SQLException e) {

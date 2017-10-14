@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Map;
-import java.util.Scanner;
 
 import com.eclipsesource.json.JsonArray;
 
@@ -13,10 +12,11 @@ import spark.Request;
 import spark.Response;
 import spark.Route;
 import spark.Spark;
+//import sun.util.calendar.LocalGregorianCalendar.Date;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws SQLException {
 		Spark.port(3002);
 		Database data = new Database();
 		Spark.get("/", new Route() {
@@ -26,12 +26,29 @@ public class Main {
 			}
 		});
 		//login
+		Spark.get("/login", new Route() {
+
+			@Override
+			public Object handle(Request req, Response res) throws Exception {
+				String user = req.cookie("user");
+				String pass = req.cookie("pass");
+				if (data.validate(user, pass) > 0) {
+					res.redirect("/user/" + user);
+				}
+				return data("res/login.html");
+			}
+			
+		});
 		Spark.post("/login", new Route() {
 			@Override
 			public Object handle(Request req, Response res) throws Exception {
 				Map<String, String> params = req.params();
 				if (params.containsKey("user") && params.containsKey("pass")) {
+					String user = params.get("user");
+					String pass = params.get("pass");
 					if (data.validate(params.get("user"), params.get("pass")) > 0) {
+						res.cookie("user", user);
+						res.cookie("pass", pass);
 						res.redirect("/user/" + params.get("user"));
 					}
 				}
@@ -47,9 +64,9 @@ public class Main {
 				public Object handle(Request req, Response res) throws Exception {
 					ResultSet rs = data.runQuery("SELECT description FROM events");
 					JsonArray array = new JsonArray();
-					if (rs.isFirst()) {
+					if (rs.next()) {
 						do {
-							array.add(rs.getString(""));
+							array.add(rs.getString("description"));
 						} while (rs.next());
 					}
 					return array.toString();
@@ -57,24 +74,20 @@ public class Main {
 			});
 		});
 		/*
-		Scanner in = new Scanner(System.in);
-		StringBuilder build = new StringBuilder();
-		String readIn;
-		while (in.hasNextLine()) {
-			readIn = in.nextLine();
-			if (readIn.equals("")) {
-				break;
-			}
-			build.append(readIn);
-		}
-		try {
-			System.out.println(build.toString());
-			data.runQuery(build.toString());
-			build.delete(0, build.length());
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		PreparedStatement ps = data.sql.prepareStatement("SELECT * FROM events");
+		ResultSet rs = ps.executeQuery();
+		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+		Date date = new Date(05, 20, 1997);
+		System.out.println(dateFormat.format(date));
+//		ps = data.sql.prepareStatement("INSERT INTO events (start_time, end_time, numvolunteers, description, created_by) values (" +
+//				 "?,  ?, " + "10, " + "'This is cool stuff', " + "'Catherine')");
+//		ps.setDate(1, (java.sql.Date) date);
+//		ps.setDate(2,  (java.sql.Date) date);
+//		rs = ps.executeQuery();
+		ps = data.sql.prepareStatement("SELECT * FROM events");
+		rs = ps.executeQuery();
+		rs.next();
+		System.out.println(rs.getString("description"));
 		*/
 	}
 	
