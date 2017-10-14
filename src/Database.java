@@ -8,7 +8,8 @@ import java.util.Properties;
 
 public class Database {
 	
-	public final Connection sql;
+	private final Connection sql;
+	private static final String str = "SELECT user_id FROM users WHERE username = ? AND password = ?";
 	
 	public Database() {
 		Connection temp = null;
@@ -27,15 +28,26 @@ public class Database {
 		}
 	}
 	
+	/**
+	 * Run a SQL query and return the results.
+	 * @param query
+	 * @return ResultSet of the results.
+	 * @throws SQLException
+	 */
 	public ResultSet runQuery(String query) throws SQLException {
 		Statement st = sql.createStatement();
 		return st.executeQuery(query);
 	}
 	
-	public void runPreparedQuery(String query) throws SQLException {
-		System.out.println("Running: " + query);
-		PreparedStatement st = sql.prepareStatement(query);
-		st.executeQuery();
+	/**
+	 * Run SQL commands that does not return data
+	 * @param query
+	 * @return int representing the successfulness - 0 if failed.
+	 * @throws SQLException
+	 */
+	public int runUpdateQuery(String query) throws SQLException {
+		Statement st = sql.createStatement();
+		return st.executeUpdate(query);
 	}
 	
 	/**
@@ -44,7 +56,6 @@ public class Database {
 	 * @param pass
 	 * @return user_id for success, 0 for no auth, -1 for server error
 	 */
-	private static final String str = "SELECT user_id FROM users WHERE username = ? AND password = ?";
 	
 	public int validate(String user, String pass) {
 		try {
