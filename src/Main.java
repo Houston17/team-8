@@ -85,21 +85,20 @@ public class Main {
 							array.add(obj);
 						} while (rs.next());
 					}
-					res.header("Access-Control-Allow-Origin", "54.89.229.2:3002");
 					return array.toString();
 				}
 			});
 			Spark.get("/users", new Route() {
 				@Override
 				public Object handle(Request req, Response res) throws Exception {
-					ResultSet rs = data.runQuery("SELECT * FROM users");
+					ResultSet rs = data.runQuery("SELECT user_id, name, username, phone, numhours, numevents, is_admin FROM users");
 					JsonArray array = new JsonArray();
 					if (rs.next()) {
 						do {
 							JsonObject obj = new JsonObject();
-							obj.add("user_id", rs.getInt("event_id"));
-							obj.add("name", rs.getDate("start_time").getTime());
-							obj.add("end_time", rs.getDate("end_time").getTime());
+							obj.add("user_id", rs.getInt("user_id"));
+							obj.add("name", rs.getDate("name").getTime());
+							obj.add("username", rs.getDate("username").getTime());
 							obj.add("numvolunteers", rs.getInt("numvolunteers"));
 							obj.add("description", rs.getString("description"));
 							obj.add("created_by", rs.getString("created_by"));
@@ -137,7 +136,7 @@ public class Main {
 				StringBuilder build = new StringBuilder();
 				String read;
 				while ((read = buff.readLine()) != null) {
-					build.append(read);
+					build.append(read + "\n");
 				}
 				return build.toString();
 			} catch (IOException e) {
