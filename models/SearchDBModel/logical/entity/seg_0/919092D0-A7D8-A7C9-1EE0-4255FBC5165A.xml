@@ -1,0 +1,132 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="919092D0-A7D8-A7C9-1EE0-4255FBC5165A" name="Events">
+<createdBy>lkjjkl97</createdBy>
+<createdTime>2017-10-14 03:53:31 UTC</createdTime>
+<ownerDesignName>SearchDBModel</ownerDesignName>
+<engineerTo>
+<item key="39BC8AC3-7258-143E-A4C8-713A9988B08D" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="event_id" id="6850EFBA-B53F-83EF-410D-95B7CCEC5E47">
+<createdBy>lkjjkl97</createdBy>
+<createdTime>2017-10-14 03:53:36 UTC</createdTime>
+<ownerDesignName>SearchDBModel</ownerDesignName>
+<engineerTo>
+<item key="39BC8AC3-7258-143E-A4C8-713A9988B08D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="date" id="B5727408-E9F5-3E0D-D5AF-FCC357DB6B8E">
+<createdBy>lkjjkl97</createdBy>
+<createdTime>2017-10-14 03:53:36 UTC</createdTime>
+<ownerDesignName>SearchDBModel</ownerDesignName>
+<engineerTo>
+<item key="39BC8AC3-7258-143E-A4C8-713A9988B08D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="start_time" id="C4A563A0-115E-FDBE-1FCF-B3C85D37B6A1">
+<createdBy>lkjjkl97</createdBy>
+<createdTime>2017-10-14 03:53:36 UTC</createdTime>
+<ownerDesignName>SearchDBModel</ownerDesignName>
+<engineerTo>
+<item key="39BC8AC3-7258-143E-A4C8-713A9988B08D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT014</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="end_time" id="4226FE8C-0450-E37B-2230-FE364AFA6B5F">
+<createdBy>lkjjkl97</createdBy>
+<createdTime>2017-10-14 03:53:36 UTC</createdTime>
+<ownerDesignName>SearchDBModel</ownerDesignName>
+<engineerTo>
+<item key="39BC8AC3-7258-143E-A4C8-713A9988B08D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT014</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="numVolunteers" id="F755BECA-1361-F1FC-6EF8-04F64AA9E031">
+<createdBy>lkjjkl97</createdBy>
+<createdTime>2017-10-14 03:53:36 UTC</createdTime>
+<ownerDesignName>SearchDBModel</ownerDesignName>
+<engineerTo>
+<item key="39BC8AC3-7258-143E-A4C8-713A9988B08D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="numHours" id="D03DB6E2-34C9-5DE4-6EA5-02EFD0918C7C">
+<createdBy>lkjjkl97</createdBy>
+<createdTime>2017-10-14 03:53:37 UTC</createdTime>
+<ownerDesignName>SearchDBModel</ownerDesignName>
+<engineerTo>
+<item key="39BC8AC3-7258-143E-A4C8-713A9988B08D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="description" id="057087A8-378A-FBDF-6206-9FB112478CEA">
+<createdBy>lkjjkl97</createdBy>
+<createdTime>2017-10-14 03:53:37 UTC</createdTime>
+<ownerDesignName>SearchDBModel</ownerDesignName>
+<engineerTo>
+<item key="39BC8AC3-7258-143E-A4C8-713A9988B08D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>300</dataTypeSize>
+<ownDataTypeParameters>300,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="created_by" id="AED7C549-19FD-D8C0-6048-D58C54F51B66">
+<createdBy>lkjjkl97</createdBy>
+<createdTime>2017-10-14 03:53:37 UTC</createdTime>
+<ownerDesignName>SearchDBModel</ownerDesignName>
+<engineerTo>
+<item key="39BC8AC3-7258-143E-A4C8-713A9988B08D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="56E9C121-3311-4C24-1909-AF6A2CD24D72" name="Events PK">
+<createdBy>lkjjkl97</createdBy>
+<createdTime>2017-10-14 03:53:54 UTC</createdTime>
+<ownerDesignName>SearchDBModel</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="39BC8AC3-7258-143E-A4C8-713A9988B08D" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>6850EFBA-B53F-83EF-410D-95B7CCEC5E47</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
