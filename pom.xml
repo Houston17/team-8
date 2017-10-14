@@ -38,5 +38,11 @@
 	    <artifactId>mysql-connector-java</artifactId>
 	    <version>8.0.8-dmr</version>
 	</dependency>
+	<!-- https://mvnrepository.com/artifact/com.eclipsesource.minimal-json/minimal-json -->
+	<dependency>
+	    <groupId>com.eclipsesource.minimal-json</groupId>
+	    <artifactId>minimal-json</artifactId>
+	    <version>0.9.1</version>
+	</dependency>
   </dependencies>
 </project>
