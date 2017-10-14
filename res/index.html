@@ -104,7 +104,7 @@
             <!-- Modal Body -->
             <div class="modal-body">
                 
-                <form method="post" role="form">
+                <form action="/api/events" method="post" role="form">
                   <div class="form-group">
                     <label for="adminEmailAddress">Admin email address</label>
                       <input type="email" class="form-control"
@@ -116,29 +116,39 @@
                           id="adminPassword" placeholder="Admin Password"/>
                   </div>
                   <div class="form-group">
-                    <label for="Description">Description</label>
+                    <label for="month_day_year">Date (YYYY-MM-DD) </label>
                       <input type="text" class="form-control"
-                          id="Description" placeholder="description"/>
+                          id="month_day_year" placeholder="month_day_year"/>
                   </div>
                   <div class="form-group">
-                    <label for="Date">Date</label>
+                    <label for="start_end_time">Time (ex. 2:00pm - 5:00pm)</label>
                       <input type="text" class="form-control"
-                          id="Date" placeholder="Date"/>
+                          id="start_end_time" placeholder="start_end_time"/>
                   </div>
                   <div class="form-group">
-                    <label for="Time Start">Time Start</label>
+                    <label for="location">Location</label>
                       <input type="text" class="form-control"
-                          id="Time Start" placeholder="Time Start"/>
+                          id="location" placeholder="location"/>
                   </div>
                   <div class="form-group">
-                    <label for="Time End">Time End</label>
+                    <label for="numvolunteers">Number of Volunteers</label>
                       <input type="text" class="form-control"
-                          id="Time End" placeholder="Time End"/>
+                          id="numvolunteers" placeholder="Number of Volunteers"/>
                   </div>
                   <div class="form-group">
-                    <label for="Number of Volunteers">Number of Volunteers</label>
+                    <label for="numhours">Hours</label>
                       <input type="text" class="form-control"
-                          id="Number of Volunteers" placeholder="Number of Volunteers"/>
+                          id="numhours" placeholder="Hours"/>
+                  </div>
+                  <div class="form-group">
+                    <label for="description">Description</label>
+                      <input type="text" class="form-control"
+                          id="description" placeholder="Description"/>
+                  </div>
+                  <div class="form-group">
+                    <label for="created_by">Creator's Name</label>
+                      <input type="text" class="form-control"
+                          id="created_by" placeholder="Creator's Name"/>
                   </div>
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
@@ -187,10 +197,10 @@
                     "<div class=\"card-block\">",
                     "<h3 class=\"card-title\">",
                     data[i].description,
-                    "</h3><p class=\"card-text\"> Start time: ",
-                    data[i].start_time,
-                    "</p><p class=\"card-text\"> End time: ",
-                    data[i].end_time,
+                    "</h3><p class=\"card-text\"> Date: ",
+                    data[i].month_day_year,
+                    "</p><p class=\"card-text\"> Time: ",
+                    data[i].start_end_time,
                     "</p><p class=\"card-text\"> Number of volunteers needed: ",
                     data[i].numvolunteers,
                     "</p><p class=\"card-text\"> Created by: ",
