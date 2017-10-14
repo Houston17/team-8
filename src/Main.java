@@ -2,10 +2,11 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Map;
+import java.util.Scanner;
 
 import com.eclipsesource.json.JsonArray;
 import com.eclipsesource.json.JsonObject;
@@ -21,6 +22,7 @@ public class Main {
 	public static void main(String[] args) throws SQLException {
 		Spark.port(3002);
 		Database data = new Database();
+		/*
 		Spark.get("/stylesheet.css", new Route() {
 			@Override
 			public Object handle(Request req, Response res) throws Exception {
@@ -110,20 +112,18 @@ public class Main {
 			});
 		});
 		/*
-		PreparedStatement ps = data.sql.prepareStatement("SELECT * FROM events");
-		ResultSet rs = ps.executeQuery();
-		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-		Date date = new Date(05, 20, 1997);
-		System.out.println(dateFormat.format(date));
-//		ps = data.sql.prepareStatement("INSERT INTO events (start_time, end_time, numvolunteers, description, created_by) values (" +
-//				 "?,  ?, " + "10, " + "'This is cool stuff', " + "'Catherine')");
-//		ps.setDate(1, (java.sql.Date) date);
-//		ps.setDate(2,  (java.sql.Date) date);
-//		rs = ps.executeQuery();
-		ps = data.sql.prepareStatement("SELECT * FROM events");
-		rs = ps.executeQuery();
-		rs.next();
-		System.out.println(rs.getString("description"));
+		Scanner in = new Scanner(System.in);
+		StringBuilder builder = new StringBuilder();
+		String str;
+		while (in.hasNextLine()) {
+			str = in.nextLine();
+			if (str.length() > 1) {
+				builder.append(str);
+			} else break;
+		}
+		System.out.println(builder.toString());
+		Statement st = data.sql.createStatement();
+		ResultSet rs = st.executeQuery(builder.toString());
 		*/
 	}
 	
