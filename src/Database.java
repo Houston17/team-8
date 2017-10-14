@@ -8,17 +8,18 @@ import java.util.Properties;
 
 public class Database {
 	
-	private final Connection sql;
+	//should be private
+	public final Connection sql;
 	private static final String str = "SELECT user_id FROM users WHERE username = ? AND password = ?";
 	
 	public Database() {
 		Connection temp = null;
 		try {
 			Properties props = new Properties();
-			props.setProperty("user", System.getenv("DATABASE_USER"));
-			props.setProperty("password", System.getenv("DATABASE_PASS"));
+			props.setProperty("user", "bcatdsnhthgflj");
+			props.setProperty("password", "5b6fa85be0b90acc5732fce5b84cb281664ca1110e852fa30a86f1bc9c6d4f2c");
 			//props.setProperty("ssl","true");
-			temp = DriverManager.getConnection(System.getenv("DATABASE_URL"), props);
+			temp = DriverManager.getConnection("jdbc:postgresql://ec2-23-21-197-231.compute-1.amazonaws.com/dei6bg5krii18t?sslmode=require", props);
 			//temp = DriverManager.getConnection(sqlURL, sqlUser, sqlPass);
 			System.out.println("Connected to database");
 		} catch (SQLException e) {
