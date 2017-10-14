@@ -3,17 +3,11 @@
 --   site:      Oracle Database 11g
 --   type:      Oracle Database 11g
 
-
-
-DROP TABLE events CASCADE CONSTRAINTS;
-
-DROP TABLE r1 CASCADE CONSTRAINTS;
-
-DROP TABLE users CASCADE CONSTRAINTS;
-
 CREATE TABLE events (
-    event_id        INTEGER NOT NULL,
-    "date"          DATE NOT NULL,
+    event_id        SERIAL PRIMARY KEY,
+    year            VARCHAR2(30) NOT NULL,
+    day             VARCHAR2(30) NOT NULL,
+    month           VARCHAR2(30) NOT NULL,
     start_time      DATE NOT NULL,
     end_time        DATE NOT NULL,
     numvolunteers   INTEGER NOT NULL,
@@ -22,17 +16,13 @@ CREATE TABLE events (
     created_by      VARCHAR2(30) NOT NULL
 );
 
-ALTER TABLE events ADD CONSTRAINT events_pk PRIMARY KEY ( event_id );
-
 CREATE TABLE r1 (
     users_user_id     INTEGER NOT NULL,
     events_event_id   INTEGER NOT NULL
 );
 
-ALTER TABLE r1 ADD CONSTRAINT r1_pk PRIMARY KEY ( users_user_id,events_event_id );
-
 CREATE TABLE users (
-    user_id     INTEGER NOT NULL,
+    user_id     SERIAL PRIMARY KEY,
     name        VARCHAR2(30) NOT NULL,
     username    VARCHAR2(30) NOT NULL,
     password    VARCHAR2(30) NOT NULL,
@@ -42,6 +32,7 @@ CREATE TABLE users (
     numevents   INTEGER NOT NULL,
     is_admin    VARCHAR2(1) NOT NULL
 );
+
 
 ALTER TABLE users ADD CONSTRAINT users_pk PRIMARY KEY ( user_id );
 
