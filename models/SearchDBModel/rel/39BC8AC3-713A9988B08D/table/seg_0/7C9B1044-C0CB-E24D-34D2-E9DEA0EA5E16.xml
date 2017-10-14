@@ -1,0 +1,131 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7C9B1044-C0CB-E24D-34D2-E9DEA0EA5E16" name="Users">
+<createdBy>lkjjkl97</createdBy>
+<createdTime>2017-10-14 03:56:34 UTC</createdTime>
+<generatorID>5832B46C-FDFF-D675-E326-8CCE04AD56F8</generatorID>
+<ownerDesignName>SearchDBModel</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="user_id" id="50F805A5-3C6E-2B96-AD8B-668A5616D400">
+<createdBy>lkjjkl97</createdBy>
+<createdTime>2017-10-14 03:56:34 UTC</createdTime>
+<generatorID>1CC1CBF0-2415-509C-68BC-6D9A76C57822</generatorID>
+<ownerDesignName>SearchDBModel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="name" id="870A431D-3FCC-7B89-8909-D4D88B3C3352">
+<createdBy>lkjjkl97</createdBy>
+<createdTime>2017-10-14 03:56:34 UTC</createdTime>
+<generatorID>32E93F41-C028-B7C7-3C5D-0047C285EDB4</generatorID>
+<ownerDesignName>SearchDBModel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="username" id="B73FEFD2-48DD-FEDC-0C82-0C0074052131">
+<createdBy>lkjjkl97</createdBy>
+<createdTime>2017-10-14 03:56:34 UTC</createdTime>
+<generatorID>6D7EAA47-625E-18AB-0962-FFFAEA1C4B5A</generatorID>
+<ownerDesignName>SearchDBModel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="password" id="BC550C55-5982-B405-543F-CEF12E6F4894">
+<createdBy>lkjjkl97</createdBy>
+<createdTime>2017-10-14 03:56:34 UTC</createdTime>
+<generatorID>0E9E30E6-B4E0-F3F1-46D9-97C81E07E9EE</generatorID>
+<ownerDesignName>SearchDBModel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="email" id="586A1B87-3766-B950-1689-89FE02DBDB77">
+<createdBy>lkjjkl97</createdBy>
+<createdTime>2017-10-14 03:56:34 UTC</createdTime>
+<generatorID>5172E8BC-5C93-5D4A-37AC-DCB2CA30EEE4</generatorID>
+<ownerDesignName>SearchDBModel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="phone" id="6FFB738A-3584-2BAD-D612-574281BCC320">
+<createdBy>lkjjkl97</createdBy>
+<createdTime>2017-10-14 03:56:34 UTC</createdTime>
+<generatorID>B1D272C5-05FC-C8CB-8B95-CEAA8F787CB1</generatorID>
+<ownerDesignName>SearchDBModel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="numHours" id="CA2D2BC8-F161-AEFD-ED4C-9CDD87DFDD72">
+<createdBy>lkjjkl97</createdBy>
+<createdTime>2017-10-14 03:56:34 UTC</createdTime>
+<generatorID>9BF28861-85F5-1A53-0E0C-CBCBF1727035</generatorID>
+<ownerDesignName>SearchDBModel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="numEvents" id="3382A368-DFD1-4A50-042E-1EC0A0283DA5">
+<createdBy>lkjjkl97</createdBy>
+<createdTime>2017-10-14 03:56:34 UTC</createdTime>
+<generatorID>4D9194B3-4EDF-5EEB-70A8-D1B2A58B9BCD</generatorID>
+<ownerDesignName>SearchDBModel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="is_admin" id="ABF9C607-01AD-A4F0-6E65-74414652A6AC">
+<createdBy>lkjjkl97</createdBy>
+<createdTime>2017-10-14 03:56:34 UTC</createdTime>
+<generatorID>10A5A273-AF7C-CE93-8048-D770E095A111</generatorID>
+<ownerDesignName>SearchDBModel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F500A9B2-0BF2-3823-0DDC-7565EDF4A110" name="Users_PK">
+<createdBy>lkjjkl97</createdBy>
+<createdTime>2017-10-14 03:56:34 UTC</createdTime>
+<generatorID>C74BA99E-37D7-52DA-81E4-5B23A0B72403</generatorID>
+<ownerDesignName>SearchDBModel</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="50F805A5-3C6E-2B96-AD8B-668A5616D400"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
