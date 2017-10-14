@@ -3,22 +3,22 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Database {
+
+	private static final String sqlURL = "jdbc:mysql://54.89.229.2:3306";
+	private static final String sqlUser = "root";
+	private static final String sqlPass = "root";
 	
-	private static final String sqlUrl = "";
-	
-	private final Connection conn;
+	private final Connection sql;
 	
 	public Database() {
-		Connection conn = null;
+		Connection temp = null;
 		try {
-			conn = DriverManager.getConnection(sqlUrl);
+			temp = DriverManager.getConnection(sqlURL, sqlUser, sqlPass);
+			System.out.println("Connected to database");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			this.conn = conn;
+			sql = temp;
 		}
 	}
-	
-	
-	
 }
