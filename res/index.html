@@ -180,9 +180,7 @@
 
 <script>
 (function() {
-  var yip2=java.net.InetAddress.getLocalHost();
-  var yip=yip2.getHostAddress();
-  var eventsJSON = "http://" + yip + ":3002/api/events";
+  var eventsJSON = "http://54.89.229.2:3002/api/events";
   $.getJSON(eventsJSON) 
     .done(function( data ) {
       $.each( data, function( i, event ) {
