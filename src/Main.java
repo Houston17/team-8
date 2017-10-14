@@ -22,7 +22,8 @@ public class Main {
 	public static void main(String[] args) throws SQLException {
 		Spark.port(3002);
 		Database data = new Database();
-		/*
+		
+		//serve the stylesheet via route because the static server ain't doing well
 		Spark.get("/stylesheet.css", new Route() {
 			@Override
 			public Object handle(Request req, Response res) throws Exception {
@@ -30,19 +31,27 @@ public class Main {
 				return data("res/stylesheet.css");
 			}
 		});
+		
+		/* Begin establishing routes */
+		
 		Spark.get("/", new Route() {
 			@Override
 			public Object handle(Request req, Response res) throws Exception {
 				return data("res/index.html");
 			}
 		});
+		
 		//login
+		
 		Spark.get("/login", new Route() {
 
 			@Override
 			public Object handle(Request req, Response res) throws Exception {
 				String user = req.cookie("user");
 				String pass = req.cookie("pass");
+				
+				//if cookies already exist of them logging in, go ahead and direct to user
+				
 				if (data.validate(user, pass) > 0) {
 					res.redirect("/user/" + user);
 				}
@@ -111,20 +120,6 @@ public class Main {
 				}
 			});
 		});
-		/*
-		Scanner in = new Scanner(System.in);
-		StringBuilder builder = new StringBuilder();
-		String str;
-		while (in.hasNextLine()) {
-			str = in.nextLine();
-			if (str.length() > 1) {
-				builder.append(str);
-			} else break;
-		}
-		System.out.println(builder.toString());
-		Statement st = data.sql.createStatement();
-		ResultSet rs = st.executeQuery(builder.toString());
-		*/
 	}
 	
 	public static String data(String path) {
