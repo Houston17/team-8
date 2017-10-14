@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Map;
@@ -20,6 +21,12 @@ public class Main {
 	public static void main(String[] args) throws SQLException {
 		Spark.port(3002);
 		Database data = new Database();
+		Spark.get("/stylesheet.css", new Route() {
+			@Override
+			public Object handle(Request req, Response res) throws Exception {
+				return data("res/stylesheet.css");
+			}
+		});
 		Spark.get("/", new Route() {
 			@Override
 			public Object handle(Request req, Response res) throws Exception {
@@ -70,6 +77,27 @@ public class Main {
 							JsonObject obj = new JsonObject();
 							obj.add("event_id", rs.getInt("event_id"));
 							obj.add("start_time", rs.getDate("start_time").getTime());
+							obj.add("end_time", rs.getDate("end_time").getTime());
+							obj.add("numvolunteers", rs.getInt("numvolunteers"));
+							obj.add("description", rs.getString("description"));
+							obj.add("created_by", rs.getString("created_by"));
+							array.add(obj);
+						} while (rs.next());
+					}
+					res.header("Access-Control-Allow-Origin", "54.89.229.2:3002");
+					return array.toString();
+				}
+			});
+			Spark.get("/users", new Route() {
+				@Override
+				public Object handle(Request req, Response res) throws Exception {
+					ResultSet rs = data.runQuery("SELECT * FROM users");
+					JsonArray array = new JsonArray();
+					if (rs.next()) {
+						do {
+							JsonObject obj = new JsonObject();
+							obj.add("user_id", rs.getInt("event_id"));
+							obj.add("name", rs.getDate("start_time").getTime());
 							obj.add("end_time", rs.getDate("end_time").getTime());
 							obj.add("numvolunteers", rs.getInt("numvolunteers"));
 							obj.add("description", rs.getString("description"));
