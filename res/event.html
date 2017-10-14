@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>team8</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<!--
+    <script type="text/javascript" src="/js/json2html.js"></script>
+    <script type="text/javascript" src="/js/jquery.json2html.js"></script>
+-->
+    <style>
+
+    </style>    
+</head>
+<body>
+    <div class="events"></div>
+
+<!--  jQuery.getJSON( url [, data ] [, success ] )     -->
+<script type="application/json" id="dummy">
+{
+  "events": [
+        {"event": {
+            "name": "Halloween Party",
+            "date": "10/31/2017",
+            "reqVolunteer": 40
+            }
+        },
+        {"event": {
+            "name": "Christmas Party",
+            "date": "12/25/2017",
+            "reqVolunteer": 70
+            }
+        }
+  ]
+}
+</script>
+
+<script>
+(function() {
+  var eventsJSON = "";
+  $.getJSON( eventsJSON) 
+    .done(function( data ) {
+      $( ".events" ).append( "<div class=\"container\">");
+      $( ".events" ).append( "<h1> Events page </h1>" );
+      $.each( data.events, function( i, event ) {
+        //console.log(data);
+        if(i % 3 == 0){
+          $( ".events" ).append( "<div class=\"row\">" );
+        }
+        //please don't hurt me future person reading this
+        $( ".events" ).append( "<div class=\"col-md-4 text-center\">" );
+        $( ".events").append( "<h2>"+ data[i].name + "</h2>" );
+        $( ".events").append( "<p>"+ data[i].date + "</p>" );
+        $( ".events").append( "<p>"+ data[i].reqVolunteer + "</p>" );
+        $( ".events").append( "<p>"+ "link??" + "</p>" );
+        $( ".events").append( "</div>" );
+        if(i + 1 % 3 == 0){
+          $( ".events" ).append( "</div>");
+        }
+      }
+      //$( ".events" ).append( "</div>" )
+      );
+    });
+})();
+</script>
+
+
+<!--
+            <div class="container">
+    <h1> Events page </h1>
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <h2>name</h2>
+                <p>date</p>
+                <p>reqvol</p>
+                <p>a link here</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <h2>name</h2>
+                <p>date</p>
+                <p>reqvol</p>
+                <p>a link here</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <h2>name</h2>
+                <p>date</p>
+                <p>reqvol</p>
+                <p>a link here</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+1. make http request 
+something like $.getJSON({
+  denote our schema
+})
+
+once that's .done()
+
+for each event item in the json
+
+appending it to #events, while specifying the format of it
+
+
+
+
+
+
+-->
+
+
+</body>
+</html>
