@@ -1,0 +1,22 @@
+CREATE TABLE users (
+    user_id     SERIAL PRIMARY KEY,
+    name        VARCHAR(30) NOT NULL,
+    username    VARCHAR(30) NOT NULL,
+    password    VARCHAR(30) NOT NULL,
+    phone       VARCHAR(30) NOT NULL,
+    numhours    INTEGER NOT NULL,
+    numevents   INTEGER NOT NULL,
+    is_admin    VARCHAR(1) NOT NULL
+);
+insert into users (name, username, password, phone, numhours, numevents, is_admin) 
+values ("Michael Yang", "myang97@utexas.edu", "root1", "9863716884", 1035, 40, 'N');
+insert into users (name, username, password, phone, numhours, numevents, is_admin) 
+values ("George Weng", "uncreativename0@gmail.com", "root2", "8571740293", 2416, 85, 'N');
+insert into users (name, username, password, phone, numhours, numevents, is_admin) 
+values ("William Chia", "2899523@gmail.com", "root3", "1728332094", 81, 20, 'N');
+insert into users (name, username, password, phone, numhours, numevents, is_admin) 
+values ("Omar Jamil", "omarj2898@gmail.com", "root4", "1029573818", 25, 10, 'N');
+insert into users (name, username, password, phone, numhours, numevents, is_admin) 
+values ("Vignesh Chilecampali", "cvignesh@utexas.edu", "root5", "5859402839", 76, 17, 'N');
+insert into users (name, username, password, phone, numhours, numevents, is_admin) 
+values ("Catherine White", "kwhite@searchhomeless.org", "root6", "7132763063", 76, 17, 'Y');
