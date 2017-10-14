@@ -20,3 +20,19 @@ insert into users (name, username, password, phone, numhours, numevents, is_admi
 values ("Vignesh Chilecampali", "cvignesh@utexas.edu", "root5", "5859402839", 76, 17, 'N');
 insert into users (name, username, password, phone, numhours, numevents, is_admin) 
 values ("Catherine White", "kwhite@searchhomeless.org", "root6", "7132763063", 76, 17, 'Y');
+
+CREATE TABLE events (
+    event_id        SERIAL PRIMARY KEY,
+    start_time      DATETIME NOT NULL,
+    end_time        DATETIME NOT NULL,
+    location        varchar(30) NOT NULL,
+    numvolunteers   INTEGER NOT NULL,
+    description     VARCHAR(300) NOT NULL,
+    created_by      VARCHAR(30) NOT NULL
+);
+insert into events (start_time, end_time, location, numvolunteers, description, created_by) 
+values ("2017-05-20 06:00:00", "2017-05-20 09:00:00", "1111 Fannnin St", 10, "Create pack lunches at JP Morgan", "Catherine White");
+insert into events (start_time, end_time, location, numvolunteers, description, created_by) 
+values ("2016-07-04 20:00:00", "2016-07-04 23:00:00", "1715 Guadalupe St", 35, "Host 4th of July party at Houston park", "Catherine White");
+insert into events (start_time, end_time, location, numvolunteers, description, created_by) 
+values ("2017-10-11 05:30:00", "2017-10-11 10:30:00", "5207 Northgate Dr", 5, "Sort clothes at Clothing Closet", "Catherine White");
