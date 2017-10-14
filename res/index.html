@@ -171,24 +171,34 @@
 
 </div> <!-- /container -->
 
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
 <script>
 (function() {
-  var eventsJSON = "url to events endpoint";
-  $.getJSON( eventsJSON) 
+  console.log("data1");
+  var eventsJSON = "http://54.89.229.2:3002/api/events";
+  $.getJSON(eventsJSON) 
     .done(function( data ) {
       //$( ".events" ).append( "<div class=\"container\">");
+      console.log("data2");
       $( ".events" ).append( "<h1> Events page </h1>" );
-      $.each( data.events, function( i, event ) {
-        //console.log(data);
+      $.each( data, function( i, event ) {
+      	console.log(data);
         if(i % 3 == 0){
           $( ".events" ).append( "<div class=\"row\">" );
         }
         //please don't hurt me future person reading this
         $( ".events" ).append( "<div class=\"col-md-4 text-center\">" );
-        $( ".events").append( "<h2>"+ data[i].name + "</h2>" );
-        $( ".events").append( "<p>"+ data[i].date + "</p>" );
-        $( ".events").append( "<p>"+ data[i].reqVolunteer + "</p>" );
-        $( ".events").append( "<p></p>" );
+        $( ".events").append( "<h2>"+ data[i].start_time + "</h2>" );
+        $( ".events").append( "<p>"+ data[i].end_time + "</p>" );
+        $( ".events").append( "<p>"+ data[i].numvolunteers + "</p>" );
+        $( ".events").append( "<p>"+ data[i].description + "</p>" );
+        $( ".events").append( "<p>"+ data[i].created_by + "</p>" );
         $( ".events").append( "</div>" );
         if(i + 1 % 3 == 0){
           $( ".events" ).append( "</div>");
@@ -200,11 +210,5 @@
 })();
 </script>
 
-
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 </body>
 </html>
