@@ -60,7 +60,7 @@
             <!-- Modal Body -->
             <div class="modal-body">
                 
-                <form role="form">
+                <form method="post" role="form">
                   <div class="form-group">
                     <label for="inputEmail"">Email address</label>
                       <input type="email" class="form-control"
@@ -71,7 +71,7 @@
                       <input type="password" class="form-control"
                           id="inputPassword" placeholder="Password"/>
                   </div>
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" value="Submit" class="btn btn-primary">Submit</button>
                 </form>
                 
                 
@@ -108,7 +108,7 @@
             <!-- Modal Body -->
             <div class="modal-body">
                 
-                <form role="form">
+                <form method="post" role="form">
                   <div class="form-group">
                     <label for="adminEmailAddress">Admin email address</label>
                       <input type="email" class="form-control"
@@ -159,7 +159,7 @@
 </div>
 
   <div>
-    <h2><b>Welcome!</b></h2>
+    <h2><b>Welcome to event signup for Search!</b></h2>
   </div>
   <div>
   	<div class="events"></div>
@@ -173,10 +173,10 @@
 
 <script>
 (function() {
-  var eventsJSON = "";
+  var eventsJSON = "url to events endpoint";
   $.getJSON( eventsJSON) 
     .done(function( data ) {
-      $( ".events" ).append( "<div class=\"container\">");
+      //$( ".events" ).append( "<div class=\"container\">");
       $( ".events" ).append( "<h1> Events page </h1>" );
       $.each( data.events, function( i, event ) {
         //console.log(data);
@@ -188,13 +188,13 @@
         $( ".events").append( "<h2>"+ data[i].name + "</h2>" );
         $( ".events").append( "<p>"+ data[i].date + "</p>" );
         $( ".events").append( "<p>"+ data[i].reqVolunteer + "</p>" );
-        $( ".events").append( "<p>"+ "link??" + "</p>" );
+        $( ".events").append( "<p></p>" );
         $( ".events").append( "</div>" );
         if(i + 1 % 3 == 0){
           $( ".events" ).append( "</div>");
         }
       }
-      $( ".events" ).append( "</div>" )
+      //$( ".events" ).append( "</div>" )
       );
     });
 })();
