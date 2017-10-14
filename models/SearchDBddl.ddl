@@ -9,8 +9,9 @@ DROP TABLE users;
 
 CREATE TABLE events (
     event_id        SERIAL PRIMARY KEY,
-    start_time      DATE NOT NULL,
-    end_time        DATE NOT NULL,
+    start_time      DATETIME NOT NULL,
+    end_time        DATETIME NOT NULL,
+    location        varchar(30) NOT NULL,
     numvolunteers   INTEGER NOT NULL,
     description     VARCHAR(300) NOT NULL,
     created_by      VARCHAR(30) NOT NULL
