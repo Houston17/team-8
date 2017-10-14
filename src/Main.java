@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.Map;
 
 import com.eclipsesource.json.JsonArray;
+import com.eclipsesource.json.JsonObject;
 
 import spark.Request;
 import spark.Response;
@@ -62,11 +63,18 @@ public class Main {
 			Spark.get("/events", new Route() {
 				@Override
 				public Object handle(Request req, Response res) throws Exception {
-					ResultSet rs = data.runQuery("SELECT description FROM events");
+					ResultSet rs = data.runQuery("SELECT * FROM events");
 					JsonArray array = new JsonArray();
 					if (rs.next()) {
 						do {
-							array.add(rs.getString("description"));
+							JsonObject obj = new JsonObject();
+							obj.add("event_id", rs.getInt("event_id"));
+							obj.add("start_time", rs.getDate("start_time").getTime());
+							obj.add("end_time", rs.getDate("end_time").getTime());
+							obj.add("numvolunteers", rs.getInt("numvolunteers"));
+							obj.add("description", rs.getString("description"));
+							obj.add("created_by", rs.getString("created_by"));
+							array.add(obj);
 						} while (rs.next());
 					}
 					return array.toString();
