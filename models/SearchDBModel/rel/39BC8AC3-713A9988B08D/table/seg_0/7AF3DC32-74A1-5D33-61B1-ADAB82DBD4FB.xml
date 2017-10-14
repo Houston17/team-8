@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7AF3DC32-74A1-5D33-61B1-ADAB82DBD4FB" name="R1">
+<createdBy>lkjjkl97</createdBy>
+<createdTime>2017-10-14 03:56:34 UTC</createdTime>
+<ownerDesignName>SearchDBModel</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Users_user_id" id="4B0C03BC-3DB0-8CF2-0536-A2F2C51BF872">
+<createdBy>lkjjkl97</createdBy>
+<createdTime>2017-10-14 03:56:34 UTC</createdTime>
+<ownerDesignName>SearchDBModel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="50B15920-7D8B-00DB-B354-210F7525C629" referredColumn="50F805A5-3C6E-2B96-AD8B-668A5616D400"/>
+</associations>
+</Column>
+<Column name="Events_event_id" id="92C7C45F-ABDF-1387-2C55-1BFDA8D64977">
+<createdBy>lkjjkl97</createdBy>
+<createdTime>2017-10-14 03:56:34 UTC</createdTime>
+<ownerDesignName>SearchDBModel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B6EF8D68-1F1B-C261-B116-8537D185CA43" referredColumn="9967C3C6-1AF3-E3CD-BFE1-3566FDC1561E"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="94ED067E-588E-6B4F-E845-8AA902285993" name="R1_PK">
+<createdBy>lkjjkl97</createdBy>
+<createdTime>2017-10-14 03:56:34 UTC</createdTime>
+<ownerDesignName>SearchDBModel</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4B0C03BC-3DB0-8CF2-0536-A2F2C51BF872"/>
+<colUsage columnID="92C7C45F-ABDF-1387-2C55-1BFDA8D64977"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BDE3111F-6A61-4966-C35D-B5F290E3BCA4" name="R1_Users_FK">
+<createdBy>lkjjkl97</createdBy>
+<createdTime>2017-10-14 03:56:34 UTC</createdTime>
+<generatorID>FEC0A1DF-341B-9B4E-4F68-68F98A9F023F</generatorID>
+<ownerDesignName>SearchDBModel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4B0C03BC-3DB0-8CF2-0536-A2F2C51BF872"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BF7CA5FE-BE40-1A60-74C2-8FD879068D07" name="R1_Events_FK">
+<createdBy>lkjjkl97</createdBy>
+<createdTime>2017-10-14 03:56:34 UTC</createdTime>
+<generatorID>FEC0A1DF-341B-9B4E-4F68-68F98A9F023F</generatorID>
+<ownerDesignName>SearchDBModel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="92C7C45F-ABDF-1387-2C55-1BFDA8D64977"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

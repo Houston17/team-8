@@ -1,0 +1,6 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.logical.LogicalDesign>
+   <object objectType="Entity" objectID="919092D0-A7D8-A7C9-1EE0-4255FBC5165A" name="Events" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.logical.Entity" propertyParentId="EC75BAA6-2817-6E00-BE7B-7B688003D357" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Entity" objectID="5832B46C-FDFF-D675-E326-8CCE04AD56F8" name="Users" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.logical.Entity" propertyParentId="EC75BAA6-2817-6E00-BE7B-7B688003D357" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Relation" objectID="FEC0A1DF-341B-9B4E-4F68-68F98A9F023F" name="R1" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.logical.Relation" propertyParentId="EC75BAA6-2817-6E00-BE7B-7B688003D357" propertySourceId="5832B46C-FDFF-D675-E326-8CCE04AD56F8" propertyTargetId="919092D0-A7D8-A7C9-1EE0-4255FBC5165A"/>
+</oracle.dbtools.crest.model.design.logical.LogicalDesign>
