@@ -25,15 +25,11 @@
           	<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#loginModal"  style="margin-right: 10px">
     			Login
 			</button>
-           <!--  <a class="nav-link">Login</a>
-           	  modal pop up with two input boxes and a submit button onsubmit=return myfunc() -->
           </li>
           <li class="nav-item">
             <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#createModal">
     			Create An Event
 			</button>
-           <!--   <a class="nav-link">Create An Event</a>
-           		modal pop up with two input boxes and a submit button onsubmit=return myfunc() -->
           </li>
         </ul>
       </div>
@@ -200,7 +196,7 @@
                     "</p><p class=\"card-text\"> Created by: ",
                     data[i].created_by,
                     "</p></div></div></div>");
-      }$( ".events").append(html.join("")));
+      }); $( ".events").append(html.join(""));
     });
 })();
 </script>
