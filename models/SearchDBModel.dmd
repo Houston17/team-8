@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="SearchDBModel" id="88F0FB00-33C3-166E-9F32-DB9949A43F4B" version="3.5">
+<createdBy>lkjjkl97</createdBy>
+<createdTime>2017-10-14 03:49:38 UTC</createdTime>
+<ownerDesignName>SearchDBModel</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>88F0FB00-33C3-166E-9F32-DB9949A43F4B</designId>
+</OSDM_Design>

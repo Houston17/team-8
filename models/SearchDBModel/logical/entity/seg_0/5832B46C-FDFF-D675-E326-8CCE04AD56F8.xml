@@ -1,0 +1,157 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="5832B46C-FDFF-D675-E326-8CCE04AD56F8" name="Users">
+<createdBy>lkjjkl97</createdBy>
+<createdTime>2017-10-14 03:51:22 UTC</createdTime>
+<ownerDesignName>SearchDBModel</ownerDesignName>
+<engineerTo>
+<item key="39BC8AC3-7258-143E-A4C8-713A9988B08D" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="user_id" id="1CC1CBF0-2415-509C-68BC-6D9A76C57822">
+<createdBy>lkjjkl97</createdBy>
+<createdTime>2017-10-14 03:51:22 UTC</createdTime>
+<ownerDesignName>SearchDBModel</ownerDesignName>
+<importedID>63656922-8DF9-70D7-FD67-6620200DC0B4</importedID>
+<engineerTo>
+<item key="39BC8AC3-7258-143E-A4C8-713A9988B08D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="name" id="32E93F41-C028-B7C7-3C5D-0047C285EDB4">
+<createdBy>lkjjkl97</createdBy>
+<createdTime>2017-10-14 03:51:22 UTC</createdTime>
+<ownerDesignName>SearchDBModel</ownerDesignName>
+<importedID>B431C762-F6C1-625F-9578-3F5B75ADDDAC</importedID>
+<engineerTo>
+<item key="39BC8AC3-7258-143E-A4C8-713A9988B08D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="username" id="6D7EAA47-625E-18AB-0962-FFFAEA1C4B5A">
+<createdBy>lkjjkl97</createdBy>
+<createdTime>2017-10-14 03:51:22 UTC</createdTime>
+<ownerDesignName>SearchDBModel</ownerDesignName>
+<importedID>87D63485-84C8-1B24-B066-A7115671E314</importedID>
+<engineerTo>
+<item key="39BC8AC3-7258-143E-A4C8-713A9988B08D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="password" id="0E9E30E6-B4E0-F3F1-46D9-97C81E07E9EE">
+<createdBy>lkjjkl97</createdBy>
+<createdTime>2017-10-14 03:51:22 UTC</createdTime>
+<ownerDesignName>SearchDBModel</ownerDesignName>
+<importedID>869D1420-B297-1567-D10E-D1BC5027F12A</importedID>
+<engineerTo>
+<item key="39BC8AC3-7258-143E-A4C8-713A9988B08D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="email" id="5172E8BC-5C93-5D4A-37AC-DCB2CA30EEE4">
+<createdBy>lkjjkl97</createdBy>
+<createdTime>2017-10-14 03:51:22 UTC</createdTime>
+<ownerDesignName>SearchDBModel</ownerDesignName>
+<importedID>6B3F09A9-B906-985E-D958-991DE8DA2EFB</importedID>
+<engineerTo>
+<item key="39BC8AC3-7258-143E-A4C8-713A9988B08D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="phone" id="B1D272C5-05FC-C8CB-8B95-CEAA8F787CB1">
+<createdBy>lkjjkl97</createdBy>
+<createdTime>2017-10-14 03:51:22 UTC</createdTime>
+<ownerDesignName>SearchDBModel</ownerDesignName>
+<importedID>C15DBA52-C4E1-86D2-82E6-E6DCB27BF361</importedID>
+<engineerTo>
+<item key="39BC8AC3-7258-143E-A4C8-713A9988B08D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="numHours" id="9BF28861-85F5-1A53-0E0C-CBCBF1727035">
+<createdBy>lkjjkl97</createdBy>
+<createdTime>2017-10-14 03:51:22 UTC</createdTime>
+<ownerDesignName>SearchDBModel</ownerDesignName>
+<importedID>0A955744-8982-D4D8-0D1E-EF4DBE7A3772</importedID>
+<engineerTo>
+<item key="39BC8AC3-7258-143E-A4C8-713A9988B08D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="numEvents" id="4D9194B3-4EDF-5EEB-70A8-D1B2A58B9BCD">
+<createdBy>lkjjkl97</createdBy>
+<createdTime>2017-10-14 03:51:22 UTC</createdTime>
+<ownerDesignName>SearchDBModel</ownerDesignName>
+<importedID>2A249D6C-2A6C-FF42-6DE6-0D4AA1683278</importedID>
+<engineerTo>
+<item key="39BC8AC3-7258-143E-A4C8-713A9988B08D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="is_admin" id="10A5A273-AF7C-CE93-8048-D770E095A111">
+<createdBy>lkjjkl97</createdBy>
+<createdTime>2017-10-14 03:51:22 UTC</createdTime>
+<ownerDesignName>SearchDBModel</ownerDesignName>
+<importedID>DFC2C279-47EC-23FE-E598-0518ADCAC482</importedID>
+<engineerTo>
+<item key="39BC8AC3-7258-143E-A4C8-713A9988B08D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="C74BA99E-37D7-52DA-81E4-5B23A0B72403" name="Users PK">
+<createdBy>lkjjkl97</createdBy>
+<createdTime>2017-10-14 03:55:27 UTC</createdTime>
+<ownerDesignName>SearchDBModel</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="39BC8AC3-7258-143E-A4C8-713A9988B08D" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>1CC1CBF0-2415-509C-68BC-6D9A76C57822</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
