@@ -24,6 +24,7 @@ public class Main {
 		Spark.get("/stylesheet.css", new Route() {
 			@Override
 			public Object handle(Request req, Response res) throws Exception {
+				res.header("Content-Type", "text/css");
 				return data("res/stylesheet.css");
 			}
 		});
