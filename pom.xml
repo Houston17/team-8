@@ -32,11 +32,11 @@
         <artifactId>slf4j-simple</artifactId>
         <version>1.7.21</version> <!-- or use LATEST -->
     </dependency>
-    <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+	<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
 	<dependency>
-	    <groupId>mysql</groupId>
-	    <artifactId>mysql-connector-java</artifactId>
-	    <version>8.0.8-dmr</version>
+	    <groupId>org.postgresql</groupId>
+	    <artifactId>postgresql</artifactId>
+	    <version>42.1.4</version>
 	</dependency>
 	<!-- https://mvnrepository.com/artifact/com.eclipsesource.minimal-json/minimal-json -->
 	<dependency>
