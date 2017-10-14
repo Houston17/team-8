@@ -180,24 +180,27 @@
 
 <script>
 (function() {
-  var yip2=java.net.InetAddress.getLocalHost();
-  var yip=yip2.getHostAddress();
-  var eventsJSON = "http://" + yip + ":3002/api/events";
+  var eventsJSON = "http://54.89.229.2:3002/api/events";
+  var html = [];
   $.getJSON(eventsJSON) 
     .done(function( data ) {
+        html.push("<div class=\"row\">");
       $.each( data, function( i, event ) {
-        $( ".events").append( "<div class=\"col-md-4 text-center\">" );
-        $( ".events").append( "<div class=\"panel panel-default\">" );
-        $( ".events").append( "<div class=\"panel-body\">" );
-        $( ".events").append( "<h2>"+ data[i].description + "</h2>" );
-        $( ".events").append( "<p>"+ data[i].start_time + "</p>" );
-        $( ".events").append( "<p>"+ data[i].end_time + "</p>" );
-        $( ".events").append( "<p>"+ data[i].numvolunteers + "</p>" );
-        $( ".events").append( "<p>"+ data[i].created_by + "</p>" );
-        $( ".events").append( "</div>" );
-        $( ".events").append( "</div>" );
-        $( ".events").append( "</div>" );
-      });
+          html.push("<div class=\"col-md-4 text-center\">",
+                    "<div class=\"card\">",
+                    "<div class=\"card-block\">",
+                    "<h3 class=\"card-title\">",
+                    data[i].description,
+                    "</h3><p class=\"card-text\"> Start time: ",
+                    data[i].start_time,
+                    "</p><p class=\"card-text\" End time: ",
+                    data[i].end_time,
+                    "</p><p class=\"card-text\" Number of volunteers needed: ",
+                    data[i].numvolunteers,
+                    "</p><p class=\"card-text\"> Created by: ",
+                    data[i].created_by,
+                    "</p></div></div></div>");
+      }$( ".events").append(html.join("")));
     });
 })();
 </script>
