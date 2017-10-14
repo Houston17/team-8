@@ -10,7 +10,7 @@ public class Database {
 	
 	//should be private
 	public final Connection sql;
-	private static final String str = "SELECT user_id FROM users WHERE username = ? AND password = ?";
+	private static final String str = "SELECT user_id, is_admin FROM users WHERE username = ? AND password = ?";
 	
 	public Database() {
 		Connection temp = null;
@@ -60,6 +60,7 @@ public class Database {
 	
 	public int validate(String user, String pass) {
 		try {
+			System.out.println(user + " " + pass);
 			PreparedStatement st = sql.prepareStatement(str);
 			st.setString(1, user);
 			st.setString(2, pass);
@@ -72,6 +73,25 @@ public class Database {
 			e.printStackTrace();
 		}
 		return -1;
+	}
+	
+	public boolean validateAdmin(String user, String pass) {
+		try {
+			System.out.println(user + " " + pass);
+			PreparedStatement st = sql.prepareStatement(str);
+			st.setString(1, user);
+			st.setString(2, pass);
+			ResultSet rs = st.executeQuery();
+			System.out.println("Ran");
+			if (!rs.next())
+				return false;
+			String isAdmin = rs.getString("is_admin");
+			System.out.println(isAdmin);
+			return "Y".equals(isAdmin);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return false;
 	}
 	
 }
