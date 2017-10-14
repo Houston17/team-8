@@ -102,6 +102,13 @@ public class Main {
 			});
 			Spark.post("/events", (Request req, Response res) -> {
 				try {
+					String adminEmailAddress = req.queryParams("adminEmailAddress");
+					String adminPassword = req.queryParams("adminPassword");
+					if (!data.validateAdmin(adminEmailAddress, adminPassword)) {
+						System.out.println("Guess that isn't an admin");
+						res.redirect("/");
+						return null;
+					}
 					String month_day_year = req.queryParams("month_day_year");
 					String start_end_time = req.queryParams("start_end_time");
 					String location = req.queryParams("location");
