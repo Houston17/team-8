@@ -4,7 +4,7 @@ import java.sql.SQLException;
 
 public class Database {
 
-	private static final String sqlURL = "jdbc:mysql://54.89.229.2:3306";
+	private static final String sqlURL = "jdbc:mysql://172.31.62.139:3306";
 	private static final String sqlUser = "root";
 	private static final String sqlPass = "root";
 	
