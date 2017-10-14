@@ -118,37 +118,37 @@
                   <div class="form-group">
                     <label for="month_day_year">Date (YYYY-MM-DD) </label>
                       <input type="text" class="form-control"
-                          id="month_day_year" placeholder="month_day_year"/>
+                          id="month_day_year" name="month_day_year" placeholder="month_day_year"/>
                   </div>
                   <div class="form-group">
                     <label for="start_end_time">Time (ex. 2:00pm - 5:00pm)</label>
                       <input type="text" class="form-control"
-                          id="start_end_time" placeholder="start_end_time"/>
+                          id="start_end_time" name="start_end_time" placeholder="start_end_time"/>
                   </div>
                   <div class="form-group">
                     <label for="location">Location</label>
                       <input type="text" class="form-control"
-                          id="location" placeholder="location"/>
+                          id="location" name="location" placeholder="location"/>
                   </div>
                   <div class="form-group">
                     <label for="numvolunteers">Number of Volunteers</label>
                       <input type="text" class="form-control"
-                          id="numvolunteers" placeholder="Number of Volunteers"/>
+                          id="numvolunteers" name="numvolunteers" placeholder="Number of Volunteers"/>
                   </div>
                   <div class="form-group">
                     <label for="numhours">Hours</label>
                       <input type="text" class="form-control"
-                          id="numhours" placeholder="Hours"/>
+                          id="numhours" name="numhours" placeholder="Hours"/>
                   </div>
                   <div class="form-group">
                     <label for="description">Description</label>
                       <input type="text" class="form-control"
-                          id="description" placeholder="Description"/>
+                          id="description" name="description" placeholder="Description"/>
                   </div>
                   <div class="form-group">
                     <label for="created_by">Creator's Name</label>
                       <input type="text" class="form-control"
-                          id="created_by" placeholder="Creator's Name"/>
+                          id="created_by" name="created_by" placeholder="Creator's Name"/>
                   </div>
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
@@ -186,7 +186,7 @@
 
 <script>
 (function() {
-  var eventsJSON = "http://54.89.229.2:3002/api/events";
+  var eventsJSON = "http://54.89.229.2:3003/api/events";
   var html = [];
   $.getJSON(eventsJSON) 
     .done(function( data ) {

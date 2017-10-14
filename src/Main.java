@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Map;
@@ -17,7 +18,7 @@ import spark.Spark;
 public class Main {
 
 	public static void main(String[] args) throws SQLException {
-		Spark.port(3002);
+		Spark.port(3003);
 		Database data = new Database();
 		
 		//serve the stylesheet via route because the static server ain't doing well
@@ -71,8 +72,8 @@ public class Main {
 					do {
 						JsonObject obj = new JsonObject();
 						obj.add("event_id", rs.getInt("event_id"));
-						obj.add("start_time", rs.getDate("start_time").getTime());
-						obj.add("end_time", rs.getDate("end_time").getTime());
+						obj.add("month_dat_year", rs.getString("month_day_year"));
+						obj.add("start_end_time", rs.getString("start_end_time"));
 						obj.add("numvolunteers", rs.getInt("numvolunteers"));
 						obj.add("description", rs.getString("description"));
 						obj.add("created_by", rs.getString("created_by"));
@@ -99,7 +100,33 @@ public class Main {
 				}
 				return array.toString();
 			});
+			Spark.post("/events", (Request req, Response res) -> {
+				try {
+					String month_day_year = req.queryParams("month_day_year");
+					String start_end_time = req.queryParams("start_end_time");
+					String location = req.queryParams("location");
+					int numvolunteers = Integer.parseInt(req.queryParams("numvolunteers"));
+					int numhours = Integer.parseInt(req.queryParams("numhours"));
+					String description = req.queryParams("description");
+					String created_by = req.queryParams("created_by");
+					PreparedStatement ps = data.sql.prepareStatement("INSERT INTO events (month_day_year , start_end_time , location, numvolunteers, numhours, description, created_by) VALUES (?, ?, ?, ?, ?, ?, ?)");
+					ps.setString(1, month_day_year);
+					ps.setString(2, start_end_time);
+					ps.setString(3, location);
+					ps.setInt(4, numvolunteers);
+					ps.setInt(5, numhours);
+					ps.setString(6, description);
+					ps.setString(7, created_by);
+					ps.executeUpdate(); //should catch this
+				} catch (NumberFormatException e) {
+					e.printStackTrace();
+				}
+				res.redirect("/");
+				return null;
+			});
 		});
+		/* Creating new events */
+		
 	}
 	
 	/**
