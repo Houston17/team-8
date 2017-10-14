@@ -1,11 +1,10 @@
-package com..code4good;
-
 import static spark.Spark.*;
 
-public class main {
+public class Main {
 
 	public static void main(String[] args) {
 		port(666);
+		
 		get("/", (req, res) -> "hey nerds");
 	}
 }
