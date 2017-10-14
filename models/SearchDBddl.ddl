@@ -3,34 +3,31 @@
 --   site:      Oracle Database 11g
 --   type:      Oracle Database 11g
 
+DROP TABLE events;
+DROP TABLE r1;
+DROP TABLE users;
+
 CREATE TABLE events (
     event_id        SERIAL PRIMARY KEY,
-    year            VARCHAR2(30) NOT NULL,
-    day             VARCHAR2(30) NOT NULL,
-    month           VARCHAR2(30) NOT NULL,
     start_time      DATE NOT NULL,
     end_time        DATE NOT NULL,
     numvolunteers   INTEGER NOT NULL,
-    numhours        INTEGER NOT NULL,
-    description     VARCHAR2(300) NOT NULL,
-    created_by      VARCHAR2(30) NOT NULL
+    description     VARCHAR(300) NOT NULL,
+    created_by      VARCHAR(30) NOT NULL
 );
-
 CREATE TABLE r1 (
     users_user_id     INTEGER NOT NULL,
     events_event_id   INTEGER NOT NULL
 );
-
 CREATE TABLE users (
     user_id     SERIAL PRIMARY KEY,
-    name        VARCHAR2(30) NOT NULL,
-    username    VARCHAR2(30) NOT NULL,
-    password    VARCHAR2(30) NOT NULL,
-    email       VARCHAR2(30) NOT NULL,
-    phone       VARCHAR2(30) NOT NULL,
+    name        VARCHAR(30) NOT NULL,
+    username    VARCHAR(30) NOT NULL,
+    password    VARCHAR(30) NOT NULL,
+    phone       VARCHAR(30) NOT NULL,
     numhours    INTEGER NOT NULL,
     numevents   INTEGER NOT NULL,
-    is_admin    VARCHAR2(1) NOT NULL
+    is_admin    VARCHAR(1) NOT NULL
 );
 
 
