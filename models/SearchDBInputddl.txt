@@ -36,3 +36,19 @@ insert into events (start_time, end_time, location, numvolunteers, description, 
 values ("2016-07-04 20:00:00", "2016-07-04 23:00:00", "1715 Guadalupe St", 35, "Host 4th of July party at Houston park", "Catherine White");
 insert into events (start_time, end_time, location, numvolunteers, description, created_by) 
 values ("2017-10-11 05:30:00", "2017-10-11 10:30:00", "5207 Northgate Dr", 5, "Sort clothes at Clothing Closet", "Catherine White");
+
+CREATE TABLE r1 (
+    users_user_id     INTEGER NOT NULL,
+    events_event_id   INTEGER NOT NULL
+);
+insert into r1 (users_user_id, events_event_id) values (1, 1);
+insert into r1 (users_user_id, events_event_id) values (1, 2);
+insert into r1 (users_user_id, events_event_id) values (1, 3);
+insert into r1 (users_user_id, events_event_id) values (2, 1);
+insert into r1 (users_user_id, events_event_id) values (2, 2);
+insert into r1 (users_user_id, events_event_id) values (2, 3);
+insert into r1 (users_user_id, events_event_id) values (3, 3);
+insert into r1 (users_user_id, events_event_id) values (4, 3);
+insert into r1 (users_user_id, events_event_id) values (4, 2);
+insert into r1 (users_user_id, events_event_id) values (5, 1);
+insert into r1 (users_user_id, events_event_id) values (5, 2);
