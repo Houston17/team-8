@@ -184,18 +184,7 @@
   $.getJSON(eventsJSON) 
     .done(function( data ) {
       $.each( data, function( i, event ) {
-        $( ".events").append( "<div class=\"col-md-4 text-center\">" );
-        $( ".events").append( "<div class=\"panel panel-default\">" );
-        $( ".events").append( "<div class=\"panel-body\">" );
-        $( ".events").append( "<h2>"+ data[i].description + "</h2>" );
-        $( ".events").append( "<p>"+ data[i].start_time + "</p>" );
-        $( ".events").append( "<p>"+ data[i].end_time + "</p>" );
-        $( ".events").append( "<p>"+ data[i].numvolunteers + "</p>" );
-        $( ".events").append( "<p>"+ data[i].created_by + "</p>" );
-        $( ".events").append( "</div>" );
-        $( ".events").append( "</div>" );
-        $( ".events").append( "</div>" );
-      });
+        $( ".events").append( "<div class=\"col-md-4 text-center\"><div class=\"panel panel-default\"><div class=\"panel-body\"><h2>" + data[i].description + "</h2><p> Start time: "+ data[i].start_time + "</p><p> End time: " + data[i].end_time + "</p><p> Number of Volunteers needed: "+ data[i].numvolunteers +"</p><p> Created by: "+ data[i].created_by + "</p></div></div></div>");
     });
 })();
 </script>
