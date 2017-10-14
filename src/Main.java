@@ -2,10 +2,11 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Map;
+import java.util.Scanner;
 
 import com.eclipsesource.json.JsonArray;
 import com.eclipsesource.json.JsonObject;
@@ -21,6 +22,8 @@ public class Main {
 	public static void main(String[] args) throws SQLException {
 		Spark.port(3002);
 		Database data = new Database();
+		
+		//serve the stylesheet via route because the static server ain't doing well
 		Spark.get("/stylesheet.css", new Route() {
 			@Override
 			public Object handle(Request req, Response res) throws Exception {
@@ -28,19 +31,27 @@ public class Main {
 				return data("res/stylesheet.css");
 			}
 		});
+		
+		/* Begin establishing routes */
+		
 		Spark.get("/", new Route() {
 			@Override
 			public Object handle(Request req, Response res) throws Exception {
 				return data("res/index.html");
 			}
 		});
+		
 		//login
+		
 		Spark.get("/login", new Route() {
 
 			@Override
 			public Object handle(Request req, Response res) throws Exception {
 				String user = req.cookie("user");
 				String pass = req.cookie("pass");
+				
+				//if cookies already exist of them logging in, go ahead and direct to user
+				
 				if (data.validate(user, pass) > 0) {
 					res.redirect("/user/" + user);
 				}
@@ -109,22 +120,6 @@ public class Main {
 				}
 			});
 		});
-		/*
-		PreparedStatement ps = data.sql.prepareStatement("SELECT * FROM events");
-		ResultSet rs = ps.executeQuery();
-		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-		Date date = new Date(05, 20, 1997);
-		System.out.println(dateFormat.format(date));
-//		ps = data.sql.prepareStatement("INSERT INTO events (start_time, end_time, numvolunteers, description, created_by) values (" +
-//				 "?,  ?, " + "10, " + "'This is cool stuff', " + "'Catherine')");
-//		ps.setDate(1, (java.sql.Date) date);
-//		ps.setDate(2,  (java.sql.Date) date);
-//		rs = ps.executeQuery();
-		ps = data.sql.prepareStatement("SELECT * FROM events");
-		rs = ps.executeQuery();
-		rs.next();
-		System.out.println(rs.getString("description"));
-		*/
 	}
 	
 	public static String data(String path) {
