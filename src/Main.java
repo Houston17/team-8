@@ -15,7 +15,6 @@ import spark.Spark;
 public class Main {
 
 	public static void main(String[] args) {
-		/*
 		Spark.port(3001);
 		get("/", new Route() {
 			@Override
@@ -36,7 +35,6 @@ public class Main {
 				return data("res/login.html");
 			}
 		});
-		*/
 //		System.out.println("Running on port " + Spark.port());
 		Database data = new Database();
 	}
