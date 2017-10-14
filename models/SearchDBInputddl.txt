@@ -52,3 +52,12 @@ insert into r1 (users_user_id, events_event_id) values (4, 3);
 insert into r1 (users_user_id, events_event_id) values (4, 2);
 insert into r1 (users_user_id, events_event_id) values (5, 1);
 insert into r1 (users_user_id, events_event_id) values (5, 2);
+
+select * from r1;
+select * from users;
+select * from events;
+
+select u.name as "STUDENT NAME",
+e.description as "DESCRIPTION"
+from r1 id join users u on id.users_user_id = u.user_id
+join events e on id.events_event_id = e.event_id;
