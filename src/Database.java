@@ -11,6 +11,15 @@ public class Database {
 	//should be private
 	public final Connection sql;
 	private static final String str = "SELECT user_id, is_admin FROM users WHERE username = ? AND password = ?";
+import java.sql.SQLException;
+
+public class Database {
+
+	private static final String sqlURL = "jdbc:mysql://http://54.89.229.2:3306/";
+	private static final String sqlUser = "root";
+	private static final String sqlPass = "root";
+	
+	private final Connection sql;
 	
 	public Database() {
 		Connection temp = null;
@@ -21,6 +30,7 @@ public class Database {
 			//props.setProperty("ssl","true");
 			temp = DriverManager.getConnection(System.getenv("DATABASE_URL"), props);
 			//temp = DriverManager.getConnection(sqlURL, sqlUser, sqlPass);
+			temp = DriverManager.getConnection(sqlURL, sqlUser, sqlPass);
 			System.out.println("Connected to database");
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -95,3 +105,6 @@ public class Database {
 	}
 	
 }
+=======
+}
+>>>>>>> added database driver

@@ -15,6 +15,8 @@ import spark.Response;
 import spark.Spark;
 //import sun.util.calendar.LocalGregorianCalendar.Date;
 
+import spark.Spark;
+
 public class Main {
 
 	public static void main(String[] args) throws SQLException {
@@ -159,6 +161,9 @@ public class Main {
 				return null;
 			}
 		} else return null;
+	public static void main(String[] args) {
+		get("/", (req, res) -> "hey nerds");
+		System.out.println("Running on port " + Spark.port());
 	}
 	
 }

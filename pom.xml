@@ -26,10 +26,12 @@
         <groupId>org.slf4j</groupId>
         <artifactId>slf4j-api</artifactId>
         <version>1.7.21</version> <!-- or use LATEST -->
+        <version>1.7.21</version>
     </dependency>
     <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>slf4j-simple</artifactId>
+
         <version>1.7.21</version> <!-- or use LATEST -->
     </dependency>
 	<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
@@ -43,6 +45,15 @@
 	    <groupId>com.eclipsesource.minimal-json</groupId>
 	    <artifactId>minimal-json</artifactId>
 	    <version>0.9.1</version>
+=======
+        <version>1.7.21</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+	<dependency>
+	    <groupId>mysql</groupId>
+	    <artifactId>mysql-connector-java</artifactId>
+	    <version>8.0.8-dmr</version>
+>>>>>>> added database driver
 	</dependency>
   </dependencies>
 </project>
