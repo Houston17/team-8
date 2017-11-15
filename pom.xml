@@ -25,12 +25,16 @@
     <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>slf4j-api</artifactId>
+<<<<<<< HEAD
         <version>1.7.21</version> <!-- or use LATEST -->
+=======
+>>>>>>> 9dcea9498c59b67f110cc8aa89a9af6862344274
         <version>1.7.21</version>
     </dependency>
     <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>slf4j-simple</artifactId>
+<<<<<<< HEAD
 
         <version>1.7.21</version> <!-- or use LATEST -->
     </dependency>
@@ -46,6 +50,8 @@
 	    <artifactId>minimal-json</artifactId>
 	    <version>0.9.1</version>
 =======
+=======
+>>>>>>> 9dcea9498c59b67f110cc8aa89a9af6862344274
         <version>1.7.21</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
@@ -53,7 +59,13 @@
 	    <groupId>mysql</groupId>
 	    <artifactId>mysql-connector-java</artifactId>
 	    <version>8.0.8-dmr</version>
+<<<<<<< HEAD
 >>>>>>> added database driver
 	</dependency>
   </dependencies>
 </project>
+=======
+	</dependency>
+  </dependencies>
+</project>
+>>>>>>> 9dcea9498c59b67f110cc8aa89a9af6862344274

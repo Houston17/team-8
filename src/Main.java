@@ -14,6 +14,7 @@ import spark.Request;
 import spark.Response;
 import spark.Spark;
 //import sun.util.calendar.LocalGregorianCalendar.Date;
+import static spark.Spark.*;
 
 import spark.Spark;
 
@@ -167,4 +168,5 @@ public class Main {
 		Database data = new Database();
 	}
 	
+}
 }

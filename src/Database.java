@@ -105,6 +105,3 @@ public class Database {
 	}
 	
 }
-=======
-}
->>>>>>> added database driver
